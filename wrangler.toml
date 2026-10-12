@@ -1,0 +1,12 @@
+name = "vyra-intercom-relay"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "IntercomRoom"
+
+# SQLite-backed Durable Objects are the kind the free Workers plan includes.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["IntercomRoom"]
